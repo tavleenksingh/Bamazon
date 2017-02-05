@@ -1,0 +1,27 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "The app will take in orders from customers and deplete stock from the store's inventory",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tavleenksingh/Bamazon.git"
+  },
+  "keywords": [
+    "sql",
+    "node"
+  ],
+  "author": "Tavleen Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tavleenksingh/Bamazon/issues"
+  },
+  "homepage": "https://github.com/tavleenksingh/Bamazon#readme",
+  "dependencies": {
+    "inquirer": "^3.0.1",
+    "mysql": "^2.13.0"
+  }
+}
