@@ -37,3 +37,4 @@ VALUES ("PROD1", "DEPT1", 30.00, 10)
 -- checking to see if the data got inserted into the table --
 SELECT * FROM products;
 
+
