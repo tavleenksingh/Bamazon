@@ -76,7 +76,7 @@ var start = function(){
 
 //function to check if the stock carries that item and if the quantity if enough 
  function checkStock(id, quant){
- 	var query = "SELECT * FROM products WHERE ?"
+ 	var query = "SELECT * FROM products WHERE ?";
  	connection.query(query, {item_id: id}, function(err, res){
  		if (err) throw err;
 
@@ -91,13 +91,13 @@ var start = function(){
  		if (res[0].stock_quantity > parseInt(quant)) {
  			updateStock(id, updatedQuantity);
  			console.log("You purchased " + quant + " quantity of " + res[0].product_name);
- 			console.log("Your total is: " + res[0].price * quant);
+ 			console.log("Your total is: $" + res[0].price * quant);
  		}
  		// let the user know if what user ordered is what we have in inventory currently
  		else if (res[0].stock_quantity === parseInt(quant)) {
  			updateStock(id, updatedQuantity);
  			console.log("Lucky you, We have only " + quant + " quanity left of " + res[0].product_name);
- 			console.log("Your total is: " + res[0].price * quant);
+ 			console.log("Your total is: $" + res[0].price * quant);
  		}
  		//if the qunatity ordered by user is more, suggest them to buy the avaialble quantity
  		else if (res[0].stock_quantity < parseInt(quant)){
@@ -105,13 +105,13 @@ var start = function(){
  			connection.end();
  		}
 
- 	})
+ 	});
  }
 
 //updating bamazon database
  function updateStock(id, quant){
- 	var query = "UPDATE products SET ? where ?"
+ 	var query = "UPDATE products SET ? where ?";
  	connection.query(query, [{stock_quantity: quant}, {item_id: id}], function(err, res){
  	});
-	};
+	}
 
